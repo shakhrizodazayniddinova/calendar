@@ -1,95 +1,111 @@
 .calendarContainer{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    height: 100vh;
-    width: 100%;
-    background-color: #1d1d1d;
-    color: white;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: calc(100vh - 60px);
+  width: 100%;
 
-    .calendarBox{
-        max-width: 330px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-        overflow: hidden;
+  .calendarBox{
+      max-width: 330px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      overflow: hidden;
 
-        .todayDateTime{
-            h3{
-                padding-bottom: 8px;
-            }
+      .todayDateTime{
+        h3{
+          padding-bottom: 8px;
         }
-    
-        .calendar-header {
+      }
+  
+      .calendar-header {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        
+        .dateBox{
+          width: 200px;
+          height: 50px;
           display: flex;
           align-items: center;
-          gap: 20px;
-          
-          .dateBox{
-            width: 200px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            gap: 8px;
-            overflow: hidden;
-              
-            p{
-                margin: 0;
-                color: #58A8F2;
-            }
-    
-            .date{
-                font-size: 20px;
-                text-align: center;
-            }
+          flex-direction: column;
+          gap: 8px;
+          overflow: hidden;
+            
+          p{
+            margin: 0;
+            color: #58A8F2;
           }
+  
+          .date{
+            font-size: 20px;
+            text-align: center;
+          }
+        }
 
-          .changeBtn{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
+        .changeBtn{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          background-color: #58A8F2;
+          color: #fff;
+          border: none;
+          border-radius: 50%;
+          font-size: 25px;
+          cursor: pointer;
+          transition: 0.3s;
+
+          &:active{
+            transition: 0.3s;
+            transform: scale(0.9);
+          }
+        }
+      }
+  
+      .calendar {
+          display: grid;
+          grid-template-columns: repeat(7, 1fr);
+          gap: 5px;
+          text-align: center;
+          max-width: 300px;
+          min-height: 215px;
+      
+          .day {
+            max-height: 19px;
+            padding: 10px;
+          }
+          
+          .today {
             background-color: #58A8F2;
-            color: #fff;
             border: none;
             border-radius: 50%;
-            font-size: 25px;
-            cursor: pointer;
-            transition: 0.3s;
-
-            &:active{
-                transition: 0.3s;
-                transform: scale(0.9);
-            }
+            font-weight: bold;
           }
-        }
-    
-        .calendar {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 5px;
-            text-align: center;
-            max-width: 300px;
-            min-height: 215px;
-        
-            .day {
-              max-height: 19px;
-              padding: 10px;
-            }
-            
-            .today {
-              background-color: #58A8F2;
-              color: #1d1d1d;
-              border: none;
-              border-radius: 50%;
-              font-weight: bold;
-            }
-        }
-    }
+      }
+  }
+}
 
+.dark{
+  transition: 0.3s;
+  background-color: #1d1d1d;
+  color: white;
+
+  .today{
+    color: #1d1d1d;
+  }
+}
+
+.light{
+  transition: 0.3s;
+  background-color: #f3f3f3;
+  color: black;
+
+  .today{
+    color: white;
+  }
 }

@@ -1,9 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import moment from 'moment';
 import { Slide } from 'react-awesome-reveal';
 import './Calendar.scss';
+import { ThemeContext } from '../ThemeContext/Theme';
+import classNames from 'classnames';
 
 export const Calendar = () => {
+  // theme context
+  const {theme} = useContext(ThemeContext);
+
   // slide states
   const [slideDirection, setDirection] = useState('');
   const [animationKey, setAnimationKey] = useState(0);
@@ -42,7 +47,7 @@ export const Calendar = () => {
   }
   
   return (
-    <div className='calendarContainer'>
+    <div className={classNames('calendarContainer', {'dark' : theme === 'dark', 'light' : theme === 'light'})}>
         <div className="calendarBox">
             <div className="calendar-header">
                 <button onClick={() => changeMonth(-1)} className='changeBtn'>

@@ -1,9 +1,13 @@
 import React from 'react';
-import { Calendar } from '../Calendar/Calendar';
 import './App.scss';
+import { Calendar } from '../Calendar/Calendar';
+import Header from '../Header/Header';
 
 export default function App() {
   return (
-    <Calendar/>
-  )
-}
+    <>
+      <Header/>
+      <Calendar/>
+    </>
+  );
+};
